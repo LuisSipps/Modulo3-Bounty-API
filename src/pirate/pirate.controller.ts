@@ -1,5 +1,5 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { PiratesService } from './pirates.service';
+import { PiratesService } from './pirate.service';
 import { CreatePirateDto } from './dto/create-pirate.dto';
 import { UpdatePirateDto } from './dto/update-pirate.dto';
 

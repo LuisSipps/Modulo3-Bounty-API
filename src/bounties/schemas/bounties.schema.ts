@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import * as mongoose from 'mongoose';
-import { Pirate } from '../../pirates/schemas/pirates.schema';
+import { Pirate } from '../../pirate/schemas/pirate.schema';
 
 @Schema()
 export class Bounty {

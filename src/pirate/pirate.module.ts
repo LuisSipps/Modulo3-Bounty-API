@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { PiratesService } from './pirates.service';
-import { PiratesController } from './pirates.controller';
+import { PiratesService } from './pirate.service';
+import { PiratesController } from './pirate.controller';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Pirate, PirateSchema } from './schemas/pirates.schema';
+import { Pirate, PirateSchema } from './schemas/pirate.schema';
 
 @Module({
   imports: [
