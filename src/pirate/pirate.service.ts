@@ -1,15 +1,24 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Inject } from '@nestjs/common';
 import { CreatePirateDto } from './dto/create-pirate.dto';
 import { UpdatePirateDto } from './dto/update-pirate.dto';
+import { Model } from 'mongoose';
+import { Pirate } from './entities/pirate.entity';
 
 @Injectable()
 export class PiratesService {
+
+  constructor(
+    @Inject('PIRATE_MODEL')
+    private pirateModel: Model<Pirate>,
+  ) { }
+
   create(createPirateDto: CreatePirateDto) {
-    return 'This action adds a new pirate';
+    const pirate = new this.pirateModel(createPirateDto);
+    return pirate.save();
   }
 
-  findAll() {
-    return `This action returns all pirates`;
+  findAll(): Promise<Pirate[]> {
+    return this.pirateModel.find().exec();
   }
 
   findOne(id: number) {

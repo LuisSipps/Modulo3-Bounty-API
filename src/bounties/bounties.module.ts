@@ -3,13 +3,10 @@ import { BountiesService } from './bounties.service';
 import { BountiesController } from './bounties.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Bounty, BountySchema} from './schemas/bounties.schema';
+import { DatabaseModule } from 'src/database/database.module';
 
 @Module({
-  imports: [
-    MongooseModule.forFeature([
-  { name: Bounty.name, schema: BountySchema },
-])
-  ],
+  imports: [ DatabaseModule ],
   controllers: [BountiesController],
   providers: [BountiesService],
 })
