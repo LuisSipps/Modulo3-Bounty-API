@@ -1,8 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import * as mongoose from 'mongoose';
-import { Pirate } from '../../pirate/schemas/pirate.schema';
 
-@Schema()
+@Schema({ timestamps: true })
 export class Bounty {
 
   @Prop({ required: true })
@@ -19,7 +18,7 @@ export class Bounty {
     ref: 'Pirate',
     required: true
   })
-  pirata: Pirate;
+  pirata: mongoose.Types.ObjectId;
 }
 
 export const BountySchema = SchemaFactory.createForClass(Bounty);

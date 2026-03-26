@@ -1,15 +1,26 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Inject } from '@nestjs/common';
 import { CreateBountyDto } from './dto/create-bounty.dto';
 import { UpdateBountyDto } from './dto/update-bounty.dto';
+import { Model } from 'mongoose';
+import { Bounty } from './schemas/bounties.schema';
+import { InjectModel } from '@nestjs/mongoose';
 
 @Injectable()
 export class BountiesService {
+
+  constructor(
+      @Inject('BOUNTY_MODEL')
+      private bountyModel: Model<Bounty>,
+    ) { }
+  
   create(createBountyDto: CreateBountyDto) {
-    return 'This action adds a new bounty';
+    const bounty = new this.bountyModel(createBountyDto);
+    return bounty.save();
   }
 
-  findAll() {
-    return `This action returns all bounties`;
+  findAll(): Promise<Bounty[]> {
+    /* return this.bountyModel.find().exec(); */
+    return this.bountyModel.find().populate('pirata');
   }
 
   findOne(id: number) {
