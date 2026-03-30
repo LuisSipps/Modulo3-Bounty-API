@@ -23,7 +23,7 @@ export class BountiesService {
     return this.bountyModel.find().populate('pirata');
   }
 
-    findActive() {
+  findActive() {
     return this.bountyModel
       .find({ estado: 'Wanted' })
       .populate('pirata');
