@@ -23,6 +23,12 @@ export class BountiesService {
     return this.bountyModel.find().populate('pirata');
   }
 
+    findActive() {
+    return this.bountyModel
+      .find({ estado: 'Wanted' })
+      .populate('pirata');
+  }
+
   async findOne(id: string) {
     const bounty = await this.bountyModel.findById(id).populate('pirata');
 
@@ -33,9 +39,15 @@ export class BountiesService {
   }
 
   async update(id: string, updateBountyDto: UpdateBountyDto) {
-    return this.bountyModel.findByIdAndUpdate(id, updateBountyDto, {
+    const bounty = await this.bountyModel.findByIdAndUpdate(id, updateBountyDto, {
       new: true,
     });
+
+    if (!bounty) {
+      throw new NotFoundException('Bounty no encontrado');
+    }
+
+    return bounty;
   }
 
   async remove(id: string) {
