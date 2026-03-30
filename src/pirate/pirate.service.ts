@@ -3,6 +3,7 @@ import { CreatePirateDto } from './dto/create-pirate.dto';
 import { UpdatePirateDto } from './dto/update-pirate.dto';
 import { Model } from 'mongoose';
 import { Pirate } from './entities/pirate.entity';
+import { NotFoundException } from '@nestjs/common';
 
 @Injectable()
 export class PiratesService {
@@ -21,15 +22,30 @@ export class PiratesService {
     return this.pirateModel.find().exec();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} pirate`;
+  async findOne(id: string) {
+    const pirate = await this.pirateModel.findById(id);
+
+    if (!pirate) {
+      throw new NotFoundException('Pirata no encontrado');
+    }
+    return pirate;
   }
 
-  update(id: number, updatePirateDto: UpdatePirateDto) {
-    return `This action updates a #${id} pirate`;
+  async update(id: string, updatePirateDto: UpdatePirateDto) {
+    return this.pirateModel.findByIdAndUpdate(id, updatePirateDto, {
+      new: true,
+    });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} pirate`;
+  async remove(id: string) {
+    const pirate = await this.pirateModel.findByIdAndDelete(id);
+
+    if (!pirate) {
+      throw new NotFoundException('Pirata no encontrado');
+    }
+
+    return {
+      message: 'Pirata eliminado correctamente',
+    };
   }
 }

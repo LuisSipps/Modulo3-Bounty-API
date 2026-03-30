@@ -19,16 +19,16 @@ export class PiratesController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.piratesService.findOne(+id);
+    return this.piratesService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updatePirateDto: UpdatePirateDto) {
-    return this.piratesService.update(+id, updatePirateDto);
+    return this.piratesService.update(id, updatePirateDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.piratesService.remove(+id);
+    return this.piratesService.remove(id);
   }
 }
