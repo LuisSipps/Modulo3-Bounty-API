@@ -5,7 +5,7 @@ import { UpdateBountyDto } from './dto/update-bounty.dto';
 
 @Controller('bounties')
 export class BountiesController {
-  constructor(private readonly bountiesService: BountiesService) {}
+  constructor(private readonly bountiesService: BountiesService) { }
 
   @Post()
   create(@Body() createBountyDto: CreateBountyDto) {
@@ -17,9 +17,14 @@ export class BountiesController {
     return this.bountiesService.findAll();
   }
 
-  @Get(':id')
+  /* @Get(':id')
   findOne(@Param('id') id: string) {
     return this.bountiesService.findOne(+id);
+  } */
+
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.bountiesService.findOne(id);
   }
 
   @Patch(':id')
@@ -29,6 +34,6 @@ export class BountiesController {
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.bountiesService.remove(+id);
+    return this.bountiesService.remove(id);
   }
 }

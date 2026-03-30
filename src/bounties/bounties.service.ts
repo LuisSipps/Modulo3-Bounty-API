@@ -3,6 +3,7 @@ import { CreateBountyDto } from './dto/create-bounty.dto';
 import { UpdateBountyDto } from './dto/update-bounty.dto';
 import { Model } from 'mongoose';
 import { Bounty } from './schemas/bounties.schema';
+import { NotFoundException } from '@nestjs/common';
 
 @Injectable()
 export class BountiesService {
@@ -22,8 +23,13 @@ export class BountiesService {
     return this.bountyModel.find().populate('pirata');
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} bounty`;
+  async findOne(id: string) {
+    const bounty = await this.bountyModel.findById(id).populate('pirata');
+
+    if (!bounty) {
+      throw new NotFoundException('Bounty no encontrado');
+    }
+    return bounty;
   }
 
   async update(id: string, updateBountyDto: UpdateBountyDto) {
@@ -32,7 +38,15 @@ export class BountiesService {
     });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} bounty`;
+  async remove(id: string) {
+    const bounty = await this.bountyModel.findByIdAndDelete(id);
+
+    if (!bounty) {
+      throw new NotFoundException('Bounty no encontrado');
+    }
+
+    return {
+      message: 'Bounty eliminado correctamente',
+    };
   }
 }
