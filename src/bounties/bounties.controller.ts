@@ -24,7 +24,7 @@ export class BountiesController {
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateBountyDto: UpdateBountyDto) {
-    return this.bountiesService.update(+id, updateBountyDto);
+    return this.bountiesService.update(id, updateBountyDto);
   }
 
   @Delete(':id')

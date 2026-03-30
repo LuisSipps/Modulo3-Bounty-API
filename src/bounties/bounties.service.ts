@@ -14,7 +14,6 @@ export class BountiesService {
   ) { }
 
   create(createBountyDto: CreateBountyDto) {
-
     const bounty = new this.bountyModel(createBountyDto);
     return bounty.save();
   }
@@ -27,8 +26,10 @@ export class BountiesService {
     return `This action returns a #${id} bounty`;
   }
 
-  update(id: number, updateBountyDto: UpdateBountyDto) {
-    return `This action updates a #${id} bounty`;
+  async update(id: string, updateBountyDto: UpdateBountyDto) {
+    return this.bountyModel.findByIdAndUpdate(id, updateBountyDto, {
+      new: true,
+    });
   }
 
   remove(id: number) {
