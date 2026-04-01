@@ -8,6 +8,7 @@ describe('BountiesService', () => {
   const mockBountyModel = {
     find: jest.fn(),
     findById: jest.fn(),
+    findOne: jest.fn(),
   };
 
   const mockPirateModel = {
@@ -50,7 +51,7 @@ describe('BountiesService', () => {
   });
 
   it('should throw NotFoundException if bounty does not exist', async () => {
-    mockBountyModel.findById.mockReturnValue({
+    mockBountyModel.findOne.mockReturnValue({
       populate: jest.fn().mockResolvedValue(null),
     });
 
