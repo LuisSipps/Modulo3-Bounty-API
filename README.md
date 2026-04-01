@@ -66,7 +66,7 @@ npm run test
 * GET http://localhost:3000/pirates
 * GET http://localhost:3000/pirates/69c94af28106c9bc7372ee63
 * PATCH http://localhost:3000/pirates/69c94af28106c9bc7372ee63
-* DELETE /pirate/:id
+* DELETE http://localhost:3000/pirates/69cc74cbac3b6e5196486696
 
 ---
 
@@ -76,7 +76,7 @@ npm run test
 * GET http://localhost:3000/bounties
 * GET http://localhost:3000/bounties/69c94b338106c9bc7372ee65
 * PATCH http://localhost:3000/bounties/69c4829db138d17581365d3a
-* DELETE 
+* DELETE http://localhost:3000/bounties/69cc761b3a52c9f7889cf865
 * GET ACTIVE http://localhost:3000/bounties/active
 
 ---
