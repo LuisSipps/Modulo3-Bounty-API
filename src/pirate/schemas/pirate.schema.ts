@@ -11,6 +11,9 @@ export class Pirate {
 
   @Prop({ default: false })
   tieneFrutaDelDiablo: boolean;
+
+  @Prop({ default: false })
+  deleted: boolean;
 }
 
 export const PirateSchema = SchemaFactory.createForClass(Pirate);

@@ -20,17 +20,17 @@ export class BountiesService {
   }
 
   findAll(): Promise<Bounty[]> {
-    return this.bountyModel.find().populate('pirata');
+    return this.bountyModel.find({ deleted: false }).populate('pirata');
   }
 
   findActive() {
     return this.bountyModel
-      .find({ estado: 'Wanted' })
+      .find({ estado: 'Wanted', deleted: false })
       .populate('pirata');
   }
 
   async findOne(id: string) {
-    const bounty = await this.bountyModel.findById(id).populate('pirata');
+    const bounty = await this.bountyModel.findOne({ _id: id, deleted: false }).populate('pirata');
 
     if (!bounty) {
       throw new NotFoundException('Bounty no encontrado');
@@ -51,7 +51,10 @@ export class BountiesService {
   }
 
   async remove(id: string) {
-    const bounty = await this.bountyModel.findByIdAndDelete(id);
+    const bounty = await this.bountyModel.findByIdAndUpdate(id,
+      { deleted: true },
+      { new: true },
+    );
 
     if (!bounty) {
       throw new NotFoundException('Bounty no encontrado');

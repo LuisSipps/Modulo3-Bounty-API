@@ -19,11 +19,11 @@ export class PiratesService {
   }
 
   findAll(): Promise<Pirate[]> {
-    return this.pirateModel.find().exec();
+    return this.pirateModel.find({ deleted: false }).exec();
   }
 
   async findOne(id: string) {
-    const pirate = await this.pirateModel.findById(id);
+    const pirate = await this.pirateModel.findOne({ _id: id, deleted: false });
 
     if (!pirate) {
       throw new NotFoundException('Pirata no encontrado');
@@ -38,7 +38,10 @@ export class PiratesService {
   }
 
   async remove(id: string) {
-    const pirate = await this.pirateModel.findByIdAndDelete(id);
+    const pirate = await this.pirateModel.findByIdAndUpdate(id,
+      { deleted: true },
+      { new: true },
+    );
 
     if (!pirate) {
       throw new NotFoundException('Pirata no encontrado');

@@ -7,18 +7,21 @@ export class Bounty {
   @Prop({ required: true })
   cantidadBellys: number;
 
-  @Prop({ 
-    enum: ['Wanted', 'Captured'], 
-    default: 'Wanted' 
+  @Prop({
+    enum: ['Wanted', 'Captured'],
+    default: 'Wanted'
   })
   estado: string;
 
-  @Prop({ 
-    type: mongoose.Schema.Types.ObjectId, 
+  @Prop({
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'Pirate',
     required: true
   })
   pirata: mongoose.Types.ObjectId;
+
+  @Prop({ default: false })
+  deleted: boolean;
 }
 
 export const BountySchema = SchemaFactory.createForClass(Bounty);
