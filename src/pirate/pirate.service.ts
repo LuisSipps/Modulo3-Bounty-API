@@ -33,14 +33,14 @@ export class PiratesService {
 
   async update(id: string, updatePirateDto: UpdatePirateDto) {
     return this.pirateModel.findByIdAndUpdate(id, updatePirateDto, {
-      new: true,
+      returnDocument: 'after',
     });
   }
 
   async remove(id: string) {
     const pirate = await this.pirateModel.findByIdAndUpdate(id,
       { deleted: true },
-      { new: true },
+      { returnDocument: 'after' },
     );
 
     if (!pirate) {

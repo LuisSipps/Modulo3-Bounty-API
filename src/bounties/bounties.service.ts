@@ -40,7 +40,7 @@ export class BountiesService {
 
   async update(id: string, updateBountyDto: UpdateBountyDto) {
     const bounty = await this.bountyModel.findByIdAndUpdate(id, updateBountyDto, {
-      new: true,
+      returnDocument: 'after',
     });
 
     if (!bounty) {
@@ -53,7 +53,7 @@ export class BountiesService {
   async remove(id: string) {
     const bounty = await this.bountyModel.findByIdAndUpdate(id,
       { deleted: true },
-      { new: true },
+      { returnDocument: 'after' },
     );
 
     if (!bounty) {
