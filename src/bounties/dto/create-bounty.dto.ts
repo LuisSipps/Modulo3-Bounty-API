@@ -6,16 +6,16 @@ export enum BountyEstado {
 }
 
 export class CreateBountyDto {
-  @IsPositive({ message: 'Tienes que ingresar un valor positivo'})
+  @IsPositive({ message: 'Tienes que ingresar un valor positivo' })
   @Min(0)
-  @IsNotEmpty({ message: 'Es obligatorio ingresar cantidadBellys'})
+  @IsNotEmpty({ message: 'Es obligatorio ingresar cantidadBellys' })
   cantidadBellys: number;
 
   @IsEnum(BountyEstado)
-  @IsOptional()  
+  @IsOptional()
   estado?: BountyEstado;
 
-  @IsMongoId() 
-  @IsNotEmpty({ message: 'Es obligatorio ingresar un id de un Pirata'})
+  @IsMongoId()
+  @IsNotEmpty({ message: 'Es obligatorio ingresar un id de un Pirata' })
   pirata: string;
 }

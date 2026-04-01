@@ -1,1 +1,1 @@
-export class Pirate {}
+export class Pirate { }

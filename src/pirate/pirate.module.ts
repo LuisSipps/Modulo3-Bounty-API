@@ -14,4 +14,4 @@ import { piratesProviders } from './pirate.providers';
     ...piratesProviders
   ],
 })
-export class PiratesModule {}
+export class PiratesModule { }

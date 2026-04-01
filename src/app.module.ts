@@ -9,13 +9,13 @@ import { ConfigModule } from '@nestjs/config';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      isGlobal:true,
+      isGlobal: true,
     }),
-    PiratesModule, 
-    BountiesModule, 
+    PiratesModule,
+    BountiesModule,
     DatabaseModule
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }

@@ -17,7 +17,7 @@ export class BountiesController {
     return this.bountiesService.findAll();
   }
 
-@Get('active')
+  @Get('active')
   findActive() {
     return this.bountiesService.findActive();
   }

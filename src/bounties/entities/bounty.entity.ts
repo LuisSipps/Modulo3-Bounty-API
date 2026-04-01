@@ -1,1 +1,1 @@
-export class Bounty {}
+export class Bounty { }

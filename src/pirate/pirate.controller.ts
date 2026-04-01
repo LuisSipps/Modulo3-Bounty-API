@@ -5,7 +5,7 @@ import { UpdatePirateDto } from './dto/update-pirate.dto';
 
 @Controller('pirates')
 export class PiratesController {
-  constructor(private readonly piratesService: PiratesService) {}
+  constructor(private readonly piratesService: PiratesService) { }
 
   @Post()
   create(@Body() createPirateDto: CreatePirateDto) {
