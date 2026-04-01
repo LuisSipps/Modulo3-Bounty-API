@@ -40,7 +40,9 @@ Permite crear, consultar, actualizar y eliminar registros, aplicando arquitectur
 Crear un archivo llamado `.env` en la raíz del proyecto con el siguiente contenido:
 
 PORT=3000
+
 MONGODB_URI=tu_uri_de_mongodb
+
 JWT_SECRET=tu_clave_secreta
 
 
