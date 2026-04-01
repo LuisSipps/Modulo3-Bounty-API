@@ -54,6 +54,8 @@ Para ver las pruebas unitarias es necesario ejecutar lo siguiente en la terminal
 
 npm run test
 
+![Unit Test](./assets/unitTest.png)
+
 ---
 
 ## Endpoints principales
