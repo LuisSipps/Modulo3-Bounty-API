@@ -1,0 +1,270 @@
+{
+  "info": {
+    "_postman_id": "c18f292d-cedc-4632-ad96-c943553755ea",
+    "name": "Bounty-API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51934778",
+    "_collection_link": "https://go.postman.co/collection/51934778-c18f292d-cedc-4632-ad96-c943553755ea?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Nuevo pirata",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nombre\": \"Brook\",\r\n    \"tripulacion\": \"Piratas del Sombrero de Paja\",\r\n    \"tieneFrutaDelDiablo\": false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/pirates",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "pirates"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Piratas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/pirates",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "pirates"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Editar pirata",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nombre\": \"Nami\",\r\n    \"tripulacion\": \"Piratas del Sombrero de Paja\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/pirates/69cd8a7e2da43d82fbdf0743",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "pirates",
+            "69cd8a7e2da43d82fbdf0743"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Pirata",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nombre\": \"JacksParrow\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/pirates/69c45bf5b47c4247c90c7f8c",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "pirates",
+            "69c45bf5b47c4247c90c7f8c"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Borrar Pirata",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/pirates/69cd8a7e2da43d82fbdf0743",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "pirates",
+            "69cd8a7e2da43d82fbdf0743"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Nuevo bounty",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"cantidadBellys\": 15000,\r\n  \"estado\": \"Wanted\",\r\n  \"pirata\": \"69cd29cfff44c69c0c51f89c\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/bounties",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bounties"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Editar bounty",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \r\n    \"estado\": \"Captured\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/bounties/69caa2749754257e768da6c8",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bounties",
+            "69caa2749754257e768da6c8"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Bounties",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/bounties",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bounties"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Bounty",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/bounties/69caa2889754257e768da6ca",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bounties",
+            "69caa2889754257e768da6ca"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Borrar bounty",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/bounties/69cc761b3a52c9f7889cf865",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bounties",
+            "69cc761b3a52c9f7889cf865"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Bounties wanted",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/bounties/active",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bounties",
+            "active"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
