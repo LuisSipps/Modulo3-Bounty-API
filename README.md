@@ -9,19 +9,19 @@ Permite crear, consultar, actualizar y eliminar registros, aplicando arquitectur
 
 ## Tecnologías utilizadas
 
-* NestJS
-* MongoDB + Mongoose
-* TypeScript
-* Jest (Unit Testing)
-* class-validator / class-transformer
+* NestJS.
+* MongoDB + Mongoose.
+* TypeScript.
+* Jest (Unit Testing).
+* class-validator / class-transformer.
 
 ---
 
 ## Estructura del proyecto
 
-* `pirate/` → gestión de piratas
-* `bounties/` → gestión de recompensas
-* `database/` → conexión a MongoDB
+* `pirate/` → gestión de piratas.
+* `bounties/` → gestión de recompensas.
+* `database/` → conexión a MongoDB.
 
 ---
 
@@ -32,12 +32,12 @@ Permite crear, consultar, actualizar y eliminar registros, aplicando arquitectur
   - Presionar el boton verde <> **code** y apretamos **Download ZIP**.
   - Extraemos el archivo ZIP y lo abrimos en **Visual Studio Code**.
 
-2. Instalar dependencias
-    - Abrimos una terminal (CMD) como administrador y navegamos hasta nuestro proyecto
+2. Instalar dependencias:
+    - Abrimos una terminal (CMD) como administrador y navegamos hasta nuestro proyecto.
     - Ahora ejecutar:
       npm install
 
-3. Crear archivo .env en Visual Studio Code
+3. Crear archivo .env en Visual Studio Code:
     Crear un archivo llamado `.env` en la raíz del proyecto con el siguiente contenido:
 
   PORT=3000
@@ -46,9 +46,9 @@ Permite crear, consultar, actualizar y eliminar registros, aplicando arquitectur
 
   JWT_SECRET=tu_clave_secreta
 
-4. Importar colección de Postman
-    - Ahora abriremos Postman y en la parte superior izquierda encontraremos tres puntos
-    - Apretamos **Importar** o **Import**
+4. Importar colección de Postman:
+    - Ahora abriremos Postman y en la parte superior izquierda encontraremos tres puntos.
+    - Apretamos **Importar** o **Import**.
     - Finalmente arrastramos o seleccionamos el archivo Bounty-API.postaman_collection.json que se encuentra en este proyecto.
 
 5.  Ejecución:
