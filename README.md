@@ -47,7 +47,7 @@ Permite crear, consultar, actualizar y eliminar registros, aplicando arquitectur
   JWT_SECRET=tu_clave_secreta
 
 4. Importar colección de Postman
-    - Ahora abriremos Postman y en la parte superior izquierdaencontraremos tres puntos
+    - Ahora abriremos Postman y en la parte superior izquierda encontraremos tres puntos
     - Apretamos **Importar** o **Import**
     - Finalmente arrastramos o seleccionamos el archivo Bounty-API.postaman_collection.json que se encuentra en este proyecto.
 
